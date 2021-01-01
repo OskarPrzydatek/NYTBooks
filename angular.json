@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "nyt-bestsellers"
+    }
+  },
+  "defaultProject": "nyt-bestsellers",
+  "cli": {
+    "analytics": false
+  }
 }
