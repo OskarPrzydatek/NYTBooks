@@ -1,11 +1,9 @@
-<section>
-  <article>
-    <ul>
-      <li *ngFor="let book of books">
-        <h1>{{book.title}}</h1>
-        <p>{{book.description}}</p>
-        <div class="temporary-image" [ngStyle]="{'background-image': 'url(' + book.book_image + ')'}"></div>
-      </li>
-    </ul>
-  </article>
-</section>
+<article>
+  <ul>
+    <li *ngFor="let book of bestsellers">
+      <h1>{{book.title}}</h1>
+      <p>{{book.description}}</p>
+      <div class="temporary-image" [ngStyle]="{'background-image': 'url(' + book.book_image + ')'}"></div>
+    </li>
+  </ul>
+</article>

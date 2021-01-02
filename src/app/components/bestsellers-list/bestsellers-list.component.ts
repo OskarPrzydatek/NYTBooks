@@ -7,7 +7,7 @@ import {BestsellersListService} from '../../services/bestsellers-list/bestseller
   styleUrls: ['./bestsellers-list.component.css']
 })
 export class BestsellersListComponent implements OnInit {
-  books: any[];
+  bestsellers: any[];
 
   constructor(private bestsellersList: BestsellersListService) { }
 
@@ -17,6 +17,6 @@ export class BestsellersListComponent implements OnInit {
 
   getList(): void {
     this.bestsellersList.getList()
-      .subscribe(list => (this.books = list.results.books));
+      .subscribe(list => (this.bestsellers = list.results.books));
   }
 }
