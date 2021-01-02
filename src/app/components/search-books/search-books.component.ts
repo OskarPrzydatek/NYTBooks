@@ -20,11 +20,14 @@ export class SearchBooksComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    console.log(this.foundBooks);
+  }
 
   onSubmit(value): void {
     this.buildTarget(value);
     this.search();
+    console.log(this.foundBooks);
   }
 
   search(): void {

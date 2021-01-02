@@ -23,7 +23,7 @@
   </form>
 
 <!-- if statement here -->
-  <div *ngIf="foundBooks !== null; then thenBlock else elseBlock"></div>
+  <div *ngIf="foundBooks !== undefined; then thenBlock else elseBlock"></div>
   <ng-template #thenBlock>
     <ul>
       <li *ngFor="let book of foundBooks">
@@ -34,6 +34,7 @@
       </li>
     </ul>
   </ng-template>
+
   <ng-template #elseBlock>
     <p>Ojoj :(</p>
   </ng-template>
