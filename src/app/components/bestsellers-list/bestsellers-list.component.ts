@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {BestsellersListService} from '../../services/bestsellers-list/bestsellers-list.service';
+import { BestsellersListService } from '../../services/bestsellers-list/bestsellers-list.service';
 
 @Component({
   selector: 'app-bestsellers-list',

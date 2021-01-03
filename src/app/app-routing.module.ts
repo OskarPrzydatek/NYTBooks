@@ -1,11 +1,11 @@
-import {RouterModule, Routes} from '@angular/router';
-import {BestsellersListComponent} from './components/bestsellers-list/bestsellers-list.component';
-import {NgModule} from '@angular/core';
-import {SearchBooksComponent} from './components/search-books/search-books.component';
+import { RouterModule, Routes } from '@angular/router';
+import { BestsellersListComponent } from './components/bestsellers-list/bestsellers-list.component';
+import { NgModule } from '@angular/core';
+import { SearchBooksArticlesComponent } from './components/search-books-articles/search-books-articles.component';
 
 const routes: Routes = [
   { path: '', component: BestsellersListComponent },
-  { path: 'search', component: SearchBooksComponent}
+  { path: 'search', component: SearchBooksArticlesComponent}
 ];
 
 @NgModule({
