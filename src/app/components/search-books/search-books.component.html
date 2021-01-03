@@ -1,7 +1,7 @@
 <article>
 
   <header>
-    <h1>SEARCH ARTICLES ABOUT BOOKS IN NEY YORK TIMES</h1>
+    <h1>SEARCH FOR NEY YORK TIMES ARTICLES ABOUT BOOKS!</h1>
   </header>
 
   <form [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
@@ -9,6 +9,7 @@
     <label>
       <input formControlName="searchValue" type="text" maxlength="20" />
     </label>
+
     <!-- target.type -->
     <input formControlName="searchTarget" type="radio" id="author" name="searchTarget" value="author">
     <label for="author">Author</label>
@@ -19,14 +20,14 @@
     <input formControlName="searchTarget" type="radio" id="title" name="searchTarget" value="title" >
     <label for="title">Title</label>
 
-    <button type="submit">Search</button>
+    <button type="submit" [disabled]="searchForm.invalid">Search</button>
   </form>
 
 <!-- if statement here -->
-  <div *ngIf="foundBooks !== undefined; then thenBlock else elseBlock"></div>
+  <div *ngIf="foundArticles.length > 0; then thenBlock else elseBlock"></div>
   <ng-template #thenBlock>
     <ul>
-      <li *ngFor="let book of foundBooks">
+      <li *ngFor="let book of foundArticles">
         <h1>{{book.book_title}}</h1>
         <p>by {{book.byline}}</p>
         <p>{{book.summary}}</p>
@@ -36,7 +37,7 @@
   </ng-template>
 
   <ng-template #elseBlock>
-    <p>Ojoj :(</p>
+      <p>Ojoj :(</p>
   </ng-template>
 
 </article>
