@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-search-books-articles',
   templateUrl: './search-books-articles.component.html',
-  styleUrls: ['./search-books-articles.component.css']
+  styleUrls: ['./search-books-articles.component.scss']
 })
 export class SearchBooksArticlesComponent implements OnInit {
   foundArticles = [];
