@@ -8,6 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class BestsellersListComponent implements OnInit {
   @Input() bestsellers;
   @Input() listInfo;
+  listDescribe = 'THE NEW YORK TIMES BESTSELLERS LIST';
 
   constructor() { }
 

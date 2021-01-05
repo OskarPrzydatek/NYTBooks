@@ -2,21 +2,40 @@
   <article>
     <header class="bestseller-header" *ngFor="let info of listInfo">
       <h1>{{info.list_name.toString().toUpperCase()}}</h1>
-      <p>{{info.bestsellers_date}}</p>
+      <h2>{{listDescribe}}</h2>
     </header>
 
     <ul class="bestseller-list">
-      <li class="list-position" *ngFor="let book of bestsellers">
-        <div class="book-image" [ngStyle]="{'background-image': 'url(' + book.book_image + ')'}"></div>
-        <div class="content">
-          <div class="content-compose">
-            <header class="content-header">
+      <li class="bestseller-list-element" *ngFor="let book of bestsellers">
+
+        <div class="bestseller-cover" [ngStyle]="{'background-image': 'url(' + book.book_image + ')'}">
+          <div class="blur-layer">
+              <div class="buy-links">
+                <header>
+                  <h1>BUY AT</h1>
+                </header>
+                <ul class="buy-links-list">
+                  <li *ngFor="let store of book.buy_links">
+                    <a href='{{store.url}}' target="_blank">{{store.name.toUpperCase()}}</a>
+                  </li>
+                </ul>
+              </div>
+          </div>
+        </div>
+
+        <div class="bestseller-card">
+          <div class="bestseller-card-compose">
+            <header class="bestseller-card-header">
               <h1>{{book.rank}}</h1>
               <h2>{{book.title}}</h2>
               <p>Written by {{book.author}}</p>
             </header>
-            <p>{{book.description}}</p>
-            <span>{{book.publisher}}</span>
+            <main class="bestseller-summary">
+              <p>{{book.description}}</p>
+            </main>
+            <footer class="bestseller-publisher">
+              <p>{{book.publisher}} Publishing</p>
+            </footer>
           </div>
         </div>
       </li>

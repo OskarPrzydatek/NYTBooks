@@ -20,13 +20,72 @@
   color: $supplement-color;
 }
 
-.list-position {
+.bestseller-list-element {
   display: flex;
   flex-direction: row;
   margin-top: 1%;
 }
 
-.content {
+.bestseller-cover {
+  width: 30vw;
+  height: 93vh;
+  background-size: cover;
+  background-position: center;
+}
+
+// TODO: STORE CLASS
+
+.blur-layer {
+  width: 100%;
+  height: 100%;
+
+  &:hover {
+    backdrop-filter: blur(12px) brightness(.4);
+  }
+}
+
+.buy-links {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  opacity: 0;
+
+  h1 {
+    margin-top: 30%;
+    font-size: 2.5rem;
+    color: $main-color;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.buy-links-list {
+  padding: 0;
+  margin-top: 10%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  list-style-type: none;
+
+  a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: $accent-color;
+    transition: color .2s;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+}
+
+.bestseller-card {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -37,7 +96,7 @@
   }
 }
 
-.content-compose {
+.bestseller-card-compose {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -48,14 +107,14 @@
   border-bottom: 1px solid $accent-color;
 }
 
-.content-header {
+.bestseller-card-header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   h1 {
-    font-size: 3.2rem;
+    font-size: 4rem;
   }
 
   h2 {
@@ -67,14 +126,10 @@
   }
 }
 
-.book-image {
-  width: 30vw;
-  height: 93vh;
-  background-size: cover;
-  background-position: center;
-  transition: filter .35s;
+.bestseller-summary {
+  font-size: 1.4rem;
+}
 
-  &:hover {
-    filter: blur(5px);
-  }
+.bestseller-publisher {
+  font-size: .8rem;
 }
