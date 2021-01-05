@@ -1,0 +1,71 @@
+@import "src/styles.scss";
+
+.result-compose {
+  margin: 5% 0;
+  text-align: center;
+}
+
+.result {
+  padding: 0;
+  list-style-type: none;
+}
+
+.result-article {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  height: 35vh;
+  border-top: 1px solid $accent-color;
+
+  &:last-child {
+    border-bottom: 1px solid $accent-color;
+  }
+}
+
+.times-logo-area {
+  width: 100%;
+  height: 100%;
+  // TODO: PUT LOGO AND DELETE THIS VIEW BORDER
+  border-right: 1px solid $accent-color;
+}
+
+.article-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  p {
+    font-size: .7rem;
+  }
+}
+
+.article-summary {
+  width: 75%;
+}
+
+.article-link-to {
+
+  a {
+    color: $supplement-color;
+    transition: color .3s;
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    &:visited {
+      color: $accent-color;
+    }
+  }
+}

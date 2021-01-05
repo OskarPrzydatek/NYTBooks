@@ -1,43 +1,49 @@
-<article>
+<section>
+  <!-- Search Form -->
+  <article>
+    <header class="search-header">
+      <h1>{{header}}</h1>
+      <p>{{headerDescribe}}</p>
+    </header>
 
-  <header>
-    <h1>SEARCH FOR NEY YORK TIMES ARTICLES ABOUT BOOKS!</h1>
-  </header>
+    <form class="search-form" [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
+      <label class="search-input-label">
+        <input class="search-input" formControlName="searchValue" type="text" maxlength="20"/>
+      </label>
 
-  <form [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
-    <!-- target.value -->
-    <label>
-      <input formControlName="searchValue" type="text" maxlength="20" />
-    </label>
+      <div class="search-target-options">
+        <label class="search-radio">
+        <span class="search-radio-input">
+          <input formControlName="searchTarget" type="radio" id="author" name="searchTarget" value="author">
+          <span class="search-radio-control"></span>
+        </span>
+          <span class="search-radio-label">Author</span>
+        </label>
 
-    <!-- target.type -->
-    <input formControlName="searchTarget" type="radio" id="author" name="searchTarget" value="author">
-    <label for="author">Author</label>
+        <label class="search-radio">
+        <span class="search-radio-input">
+          <input formControlName="searchTarget" type="radio" id="isbn" name="searchTarget" value="isbn">
+          <span class="search-radio-control"></span>
+        </span>
+          <span class="search-radio-label">ISBN Number</span>
+        </label>
 
-    <input formControlName="searchTarget" type="radio" id="isbn" name="searchTarget" value="isbn" >
-    <label for="isbn">ISBN Number</label>
+        <label class="search-radio">
+        <span class="search-radio-input">
+          <input formControlName="searchTarget" type="radio" id="title" name="searchTarget" value="title">
+          <span class="search-radio-control"></span>
+        </span>
+          <span class="search-radio-label">Title</span>
+        </label>
+      </div>
 
-    <input formControlName="searchTarget" type="radio" id="title" name="searchTarget" value="title" >
-    <label for="title">Title</label>
+      <button class="search-button" type="submit" [disabled]="searchForm.invalid">SEARCH</button>
+    </form>
+  </article>
 
-    <button type="submit" [disabled]="searchForm.invalid">Search</button>
-  </form>
-
-<!-- if statement here -->
-  <div *ngIf="foundArticles.length > 0; then thenBlock else elseBlock"></div>
-  <ng-template #thenBlock>
-    <ul>
-      <li *ngFor="let book of foundArticles">
-        <h1>{{book.book_title}}</h1>
-        <p>by {{book.byline}}</p>
-        <p>{{book.summary}}</p>
-        <a href="{{book.url}}" target="_blank">To Article</a>
-      </li>
-    </ul>
-  </ng-template>
-
-  <ng-template #elseBlock>
-      <p>Ojoj :(</p>
-  </ng-template>
-
-</article>
+  <div *ngIf="start">
+    <div *ngIf="foundArticles.length > 0">
+      <app-search-result [foundArticles]="foundArticles"></app-search-result>
+    </div>
+  </div>
+</section>

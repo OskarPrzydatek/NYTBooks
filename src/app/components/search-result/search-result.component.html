@@ -1,0 +1,34 @@
+<article class="result-compose">
+  <ul class="result">
+    <li class="result-article" *ngFor="let article of foundArticles">
+
+      <div class="times-logo-area"></div>
+
+      <article class="article-info">
+        <header class="book-info">
+          <h1>{{article.book_title}}</h1>
+          <p>Published: {{article.publication_dt}}</p>
+        </header>
+        <main class="article-summary">
+          <div  *ngIf='article.summary === ""; then notSummary else summary'></div>
+          <ng-template #notSummary>
+            <p>THERE'S NO SUMMARY OF ARTICLE</p>
+          </ng-template>
+          <ng-template #summary>
+            <p>{{article.summary}}</p>
+          </ng-template>
+        </main>
+        <footer class="article-link-to">
+          <div *ngIf='article.byline === ""; then notByline else byline'></div>
+          <ng-template #notByline>
+            <a href="{{article.url}}" target="_blank">ARTICLE HERE</a>
+          </ng-template>
+          <ng-template #byline>
+            <a href="{{article.url}}" target="_blank">{{article.byline}}'S ARTICLE HERE</a>
+          </ng-template>
+        </footer>
+      </article>
+
+    </li>
+  </ul>
+</article>

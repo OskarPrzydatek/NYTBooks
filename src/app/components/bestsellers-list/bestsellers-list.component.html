@@ -1,9 +1,18 @@
-<article>
-  <ul>
-    <li *ngFor="let book of bestsellers">
-      <h1>{{book.title}}</h1>
-      <p>{{book.description}}</p>
-      <div class="temporary-image" [ngStyle]="{'background-image': 'url(' + book.book_image + ')'}"></div>
+<section>
+  <ul class="bestseller-list">
+    <li class="list-position" *ngFor="let book of bestsellers">
+      <div class="book-image" [ngStyle]="{'background-image': 'url(' + book.book_image + ')'}"></div>
+      <article class="content">
+        <div class="content-compose">
+          <header class="content-header">
+            <h1>{{book.rank}}</h1>
+            <h2>{{book.title}}</h2>
+            <p>Written by {{book.author}}</p>
+          </header>
+          <p>{{book.description}}</p>
+          <span>{{book.publisher}}</span>
+        </div>
+      </article>
     </li>
   </ul>
-</article>
+</section>

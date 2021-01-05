@@ -1,4 +1,66 @@
-.temporary-image {
-  width: 300px;
-  height: 500px;
+@import 'src/styles.scss';
+
+.bestseller-list {
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+  color: $supplement-color;
+}
+
+.list-position {
+  display: flex;
+  flex-direction: row;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 70vw;
+  background: $main-color;
+
+  p {
+    width: 50vw;
+  }
+}
+
+.content-compose {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1%;
+  width: 80%;
+  height: 75%;
+  border-bottom: 1px solid $accent-color;
+}
+
+.content-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-style: italic;
+  }
+}
+
+.book-image {
+  width: 30vw;
+  height: 93vh;
+  background-size: cover;
+  transition: filter .35s;
+
+  &:hover {
+    filter: blur(5px);
+  }
 }

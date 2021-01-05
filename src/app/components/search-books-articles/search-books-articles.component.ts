@@ -8,9 +8,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./search-books-articles.component.scss']
 })
 export class SearchBooksArticlesComponent implements OnInit {
+  // content
+  header = 'SEARCH FOR NEY YORK TIMES ARTICLES ABOUT BOOKS!';
+  headerDescribe = 'All NYT articles about books in one place!';
+
   foundArticles = [];
   targetURL: string;
   searchForm: FormGroup;
+  start = false;
 
   constructor(private searchBooksArticles: SearchBooksArticlesService,
               private formBuilder: FormBuilder) { }
@@ -27,6 +32,7 @@ export class SearchBooksArticlesComponent implements OnInit {
   }
 
   onSubmit(value): void {
+    this.start = true;
     this.buildTarget(value);
     this.search();
   }
@@ -37,7 +43,13 @@ export class SearchBooksArticlesComponent implements OnInit {
   }
 
   buildTarget(value): string {
-    console.log(value);
-    return this.targetURL = `${value.searchTarget}=${value.searchValue.toString().replace(/\\s/g, '+').toLowerCase()}`;
+    return this.targetURL = `${value.searchTarget}=${value.searchValue
+      .toString()
+      .replace(/\\s/g, '+')
+      .toLowerCase()}`;
   }
+
+  /*articlesNotFound(searchValue): void {
+
+  }*/
 }
