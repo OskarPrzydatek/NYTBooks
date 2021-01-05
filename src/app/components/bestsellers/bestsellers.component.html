@@ -1,1 +1,8 @@
-<p>bestsellers works!</p>
+<div *ngIf="bestsellers.length > 0; then list else loading"></div>
+
+<ng-template #list>
+  <app-bestsellers-list [bestsellers]="bestsellers" [listInfo]="listInfo"></app-bestsellers-list>
+</ng-template>
+<ng-template #loading>
+  <app-bestsellers-loading></app-bestsellers-loading>
+</ng-template>
