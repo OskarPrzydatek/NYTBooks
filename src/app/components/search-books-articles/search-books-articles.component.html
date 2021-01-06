@@ -8,13 +8,20 @@
 
     <form class="search-form" [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
       <label class="search-input-label">
-        <input class="search-input" formControlName="searchValue" type="text" maxlength="20"/>
+        <input class="search-input"
+               formControlName="searchValue"
+               type="text"
+               maxlength="20"
+               placeholder="{{searchForm.value.searchTarget | searchPlaceholder}}"/>
       </label>
 
       <div class="search-target-options">
         <label class="search-radio">
         <span class="search-radio-input">
-          <input formControlName="searchTarget" type="radio" id="author" name="searchTarget" value="author">
+          <input formControlName="searchTarget"
+            type="radio" id="author"
+            name="searchTarget"
+            value="author">
           <span class="search-radio-control"></span>
         </span>
           <span class="search-radio-label">Author</span>
@@ -22,7 +29,10 @@
 
         <label class="search-radio">
         <span class="search-radio-input">
-          <input formControlName="searchTarget" type="radio" id="isbn" name="searchTarget" value="isbn">
+          <input formControlName="searchTarget"
+                 type="radio" id="isbn"
+                 name="searchTarget"
+                 value="isbn">
           <span class="search-radio-control"></span>
         </span>
           <span class="search-radio-label">ISBN Number</span>
@@ -30,7 +40,11 @@
 
         <label class="search-radio">
         <span class="search-radio-input">
-          <input formControlName="searchTarget" type="radio" id="title" name="searchTarget" value="title">
+          <input formControlName="searchTarget"
+                 type="radio"
+                 id="title"
+                 name="searchTarget"
+                 value="title">
           <span class="search-radio-control"></span>
         </span>
           <span class="search-radio-label">Title</span>
