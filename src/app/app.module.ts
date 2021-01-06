@@ -14,6 +14,7 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { BestsellersComponent } from './components/bestsellers/bestsellers.component';
 import { RankPipe } from './pipes/rank/rank.pipe';
 import { MultiplicityPipe } from './pipes/multiplicity/multiplicity.pipe';
+import { SearchPlaceholderPipe } from './pipes/search-placeholder/search-placeholder.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MultiplicityPipe } from './pipes/multiplicity/multiplicity.pipe';
     BestsellersComponent,
     RankPipe,
     MultiplicityPipe,
+    SearchPlaceholderPipe,
   ],
   imports: [
     BrowserModule,
