@@ -13,6 +13,7 @@ import { SearchResultComponent } from './components/search-result/search-result.
 import { LoadingComponent } from './components/loading/loading.component';
 import { BestsellersComponent } from './components/bestsellers/bestsellers.component';
 import { RankPipe } from './pipes/rank/rank.pipe';
+import { MultiplicityPipe } from './pipes/multiplicity/multiplicity.pipe';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { RankPipe } from './pipes/rank/rank.pipe';
     LoadingComponent,
     BestsellersComponent,
     RankPipe,
+    MultiplicityPipe,
   ],
   imports: [
     BrowserModule,

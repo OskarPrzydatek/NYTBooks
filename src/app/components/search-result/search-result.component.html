@@ -1,7 +1,7 @@
 <article class="result-compose">
 
   <header class="articles-found-info">
-    <h1>{{articlesData[1]}} ARTICLES FOUND</h1>
+    <h1>{{articlesData[1]}} {{(articlesData[1] | multiplicity: 'article') | uppercase}} FOUND</h1>
   </header>
 
   <ul class="result">
