@@ -10,7 +10,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SearchResultComponent } from './components/search-result/search-result.component';
-import { BestsellersLoadingComponent } from './components/bestsellers-loading/bestsellers-loading.component';
+import { LoadingComponent } from './components/loading/loading.component';
 import { BestsellersComponent } from './components/bestsellers/bestsellers.component';
 import { RankPipe } from './pipes/rank/rank.pipe';
 
@@ -22,7 +22,7 @@ import { RankPipe } from './pipes/rank/rank.pipe';
     NavBarComponent,
     FooterComponent,
     SearchResultComponent,
-    BestsellersLoadingComponent,
+    LoadingComponent,
     BestsellersComponent,
     RankPipe,
   ],

@@ -14,7 +14,6 @@ export class BestsellersComponent implements OnInit {
 
   ngOnInit(): void {
     this.getList();
-    console.log(this.listInfo);
   }
 
   getList(): void {

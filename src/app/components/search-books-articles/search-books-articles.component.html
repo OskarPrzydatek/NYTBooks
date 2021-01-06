@@ -1,9 +1,9 @@
 <section>
-  <!-- Search Form -->
   <article>
+
     <header class="search-header">
-      <h1>{{header}}</h1>
-      <p>{{headerDescribe}}</p>
+      <h1>SEARCH FOR NEY YORK TIMES ARTICLES ABOUT BOOKS!</h1>
+      <p>All NYT articles about books in one place!</p>
     </header>
 
     <form class="search-form" [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
@@ -38,12 +38,19 @@
       </div>
 
       <button class="search-button" type="submit" [disabled]="searchForm.invalid">SEARCH</button>
+
     </form>
   </article>
 
   <div *ngIf="start">
-    <div *ngIf="foundArticles.length > 0">
-      <app-search-result [foundArticles]="foundArticles"></app-search-result>
-    </div>
+    <div *ngIf="articlesData[0] !== 'OK'; then loading else searchResult "></div>
   </div>
+
+  <ng-template #loading>
+    <app-loading></app-loading>
+  </ng-template>
+  <ng-template #searchResult>
+    <app-search-result [foundArticles]="foundArticles" [articlesData]="articlesData"></app-search-result>
+  </ng-template>
+
 </section>

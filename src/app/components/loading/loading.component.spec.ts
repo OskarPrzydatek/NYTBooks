@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BestsellersLoadingComponent } from './bestsellers-loading.component';
+import { LoadingComponent } from './loading.component';
 
 describe('BestsellersLoadingComponent', () => {
-  let component: BestsellersLoadingComponent;
-  let fixture: ComponentFixture<BestsellersLoadingComponent>;
+  let component: LoadingComponent;
+  let fixture: ComponentFixture<LoadingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BestsellersLoadingComponent ]
+      declarations: [ LoadingComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BestsellersLoadingComponent);
+    fixture = TestBed.createComponent(LoadingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

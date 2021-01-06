@@ -7,6 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class SearchResultComponent implements OnInit {
   @Input() foundArticles = [];
+  @Input() articlesData = [];
 
   constructor() { }
 

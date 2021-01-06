@@ -18,7 +18,7 @@
                 </header>
                 <ul class="buy-links-list">
                   <li *ngFor="let store of book.buy_links">
-                    <a href='{{store.url}}' target="_blank">{{store.name.toUpperCase()}}</a>
+                    <a href='{{store.url}}' target="_blank">{{store.name | uppercase}}</a>
                   </li>
                 </ul>
               </div>
