@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { BestsellersLoadingComponent } from './components/bestsellers-loading/bestsellers-loading.component';
 import { BestsellersComponent } from './components/bestsellers/bestsellers.component';
+import { RankPipe } from './pipes/rank/rank.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { BestsellersComponent } from './components/bestsellers/bestsellers.compo
     SearchResultComponent,
     BestsellersLoadingComponent,
     BestsellersComponent,
+    RankPipe,
   ],
   imports: [
     BrowserModule,
