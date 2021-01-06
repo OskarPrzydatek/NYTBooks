@@ -1,8 +1,7 @@
-<div style="text-align: center; margin-top: 5%">
+<div style="text-align: center">
   <img width="150px" height="150px" 
     src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1024px-Angular_full_color_logo.svg.png" alt="logo">
   <h1>THE NEW YORK TIMES BOOKS</h1> 
-  <hr>
 </div>
 
 ### About
