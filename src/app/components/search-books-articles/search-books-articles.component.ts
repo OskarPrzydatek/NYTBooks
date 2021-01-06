@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchBooksArticlesService } from '../../services/search-books-articles/search-books-articles.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {ViewportScroller} from '@angular/common';
 
 @Component({
   selector: 'app-search-books-articles',
@@ -16,7 +17,8 @@ export class SearchBooksArticlesComponent implements OnInit {
   start = false;
 
   constructor(private searchBooksArticles: SearchBooksArticlesService,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              private viewportScroller: ViewportScroller) { }
 
   ngOnInit(): void {
     this.searchForm = this.formBuilder.group({
@@ -55,5 +57,9 @@ export class SearchBooksArticlesComponent implements OnInit {
     if (this.articlesData.length !== 0) {
       this.articlesData = [];
     }
+  }
+
+  toResultScroll(indicator: string): void {
+      this.viewportScroller.scrollToAnchor(indicator);
   }
 }

@@ -37,9 +37,14 @@
         </label>
       </div>
 
-      <button class="search-button" type="submit" [disabled]="searchForm.invalid">SEARCH</button>
+      <button class="search-button"
+              type="submit"
+              [disabled]="searchForm.invalid"
+              (click)="toResultScroll('result-indicator')">SEARCH</button>
 
     </form>
+
+    <div id="result-indicator"></div>
   </article>
 
   <div *ngIf="start">
