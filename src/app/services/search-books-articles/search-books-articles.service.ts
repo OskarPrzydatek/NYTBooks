@@ -7,9 +7,10 @@ import { environment } from '../../../environments/environment.api';
   providedIn: 'root'
 })
 export class SearchBooksArticlesService {
+
   constructor(private http: HttpClient) { }
 
-  search(target): Observable<any> {
+  search(target: string): Observable<any> {
     return this.http.get(environment.searchURL(target));
   }
 }

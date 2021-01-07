@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchBooksArticlesService } from '../../services/search-books-articles/search-books-articles.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {ViewportScroller} from '@angular/common';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-search-books-articles',
@@ -25,13 +25,12 @@ export class SearchBooksArticlesComponent implements OnInit {
       searchTarget: ['author', Validators.required],
       searchValue: ['', Validators.compose([
         Validators.required,
-        Validators.minLength(1),
-        Validators.maxLength(20)])
+        Validators.minLength(1)])
       ]
     });
   }
 
-  onSubmit(value): void {
+  onSubmit(value: any): void {
     this.start = true;
     this.articlesDataCleaner();
     this.buildTarget(value);
@@ -46,7 +45,7 @@ export class SearchBooksArticlesComponent implements OnInit {
       });
   }
 
-  buildTarget(value): string {
+  buildTarget(value: any): string {
     return this.targetURL = `${value.searchTarget}=${value.searchValue
       .toString()
       .replace(/\\s/g, '+')
