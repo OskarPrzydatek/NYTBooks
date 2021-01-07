@@ -5,7 +5,8 @@ import { SearchBooksArticlesComponent } from './components/search-books-articles
 
 const routes: Routes = [
   {path: '', component: BestsellersComponent},
-  {path: 'search', component: SearchBooksArticlesComponent}
+  {path: 'search', component: SearchBooksArticlesComponent},
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({
