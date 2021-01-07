@@ -12,6 +12,6 @@ An angular webapp dedicated for "The New York Times" content about books.
 - Searching The New York Times articles about books
 
 ### Tech Stack
-- Ts: Angular
-- Stylesheet: Sass
+- Angular
+- Sass
 - API: https://developer.nytimes.com/apis
