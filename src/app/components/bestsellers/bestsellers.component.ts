@@ -4,7 +4,7 @@ import { BestsellersListService } from '../../services/bestsellers-list/bestsell
 @Component({
   selector: 'app-bestsellers',
   templateUrl: './bestsellers.component.html',
-  styleUrls: ['./bestsellers.component.scss']
+  styleUrls: []
 })
 export class BestsellersComponent implements OnInit {
   listInfo = [];

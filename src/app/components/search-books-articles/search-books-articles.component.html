@@ -1,6 +1,5 @@
 <section>
   <article>
-
     <header class="search-header">
       <h1>SEARCH FOR NEY YORK TIMES ARTICLES ABOUT BOOKS!</h1>
       <p>All NYT articles about books in one place!</p>
@@ -8,21 +7,21 @@
 
     <form class="search-form" [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
       <label class="search-input-label">
-        <input class="search-input"
+        <input class="search-input search-input-border"
                formControlName="searchValue"
                type="text"
                maxlength="35"
-               placeholder="{{searchForm.value.searchTarget | searchPlaceholder}}"/>
+               placeholder="{{(searchForm.value.searchTarget | searchPlaceholder) | uppercase}}"/>
       </label>
 
-      <div class="search-target-options">
+      <div class="search-target-options search-target-options-size">
         <label class="search-radio">
         <span class="search-radio-input">
           <input formControlName="searchTarget"
             type="radio" id="author"
             name="searchTarget"
             value="author">
-          <span class="search-radio-control"></span>
+          <span class="search-radio-control search-radio-control-size search-radio-control-border"></span>
         </span>
           <span class="search-radio-label">Author</span>
         </label>
@@ -33,7 +32,7 @@
                  type="radio" id="isbn"
                  name="searchTarget"
                  value="isbn">
-          <span class="search-radio-control"></span>
+          <span class="search-radio-control search-radio-control-size search-radio-control-border"></span>
         </span>
           <span class="search-radio-label">ISBN Number</span>
         </label>
@@ -45,21 +44,21 @@
                  id="title"
                  name="searchTarget"
                  value="title">
-          <span class="search-radio-control"></span>
+          <span class="search-radio-control search-radio-control-size search-radio-control-border"></span>
         </span>
           <span class="search-radio-label">Title</span>
         </label>
       </div>
 
-      <button class="search-button"
+      <button class="search-button search-button-size search-button-color search-button-border"
               type="submit"
               [disabled]="searchForm.invalid"
-              (click)="toResultScroll('result-indicator')">SEARCH</button>
-
+              (click)="toResultScroll('result-indicator')">
+        SEARCH
+      </button>
     </form>
 
     <div id="result-indicator"></div>
-  </article>
 
   <div *ngIf="start">
     <div *ngIf="articlesData[0] !== 'OK'; then loading else searchResult "></div>
@@ -71,5 +70,5 @@
   <ng-template #searchResult>
     <app-search-result [foundArticles]="foundArticles" [articlesData]="articlesData"></app-search-result>
   </ng-template>
-
+  </article>
 </section>

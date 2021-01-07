@@ -1,10 +1,8 @@
 @import 'src/styles.scss';
 
 .bestseller-header {
-  display: flex;
+  @include flexCenter;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 30vh;
 
   h1 {
@@ -13,10 +11,7 @@
 }
 
 .bestseller-list {
-  padding: 0;
   margin: 1% 2.5% 15% 2.5%;
-  list-style-type: none;
-  text-align: center;
   color: $supplement-color;
 }
 
@@ -29,47 +24,49 @@
 .bestseller-cover {
   width: 30vw;
   height: 93vh;
-  background-size: cover;
-  background-position: center;
+
+  &.bestseller-cover-coverage {
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 .filter-layer {
-  width: 100%;
-  height: 100%;
+  @include toParentSizer;
 
   &:hover {
-    backdrop-filter: brightness(.2) blur(2px);
+    backdrop-filter: brightness(.4) blur(4px);
   }
 }
 
 .buy-links {
-  width: 100%;
-  height: 100%;
+  @include toParentSizer;
   display: flex;
-  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  opacity: 0;
+  flex-direction: column;
+
+  &.buy-links-visibility {
+    opacity: 0;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 
   h1 {
     margin-top: 30%;
     font-size: 2.5rem;
     color: $main-color;
   }
-
-  &:hover {
-    opacity: 1;
-  }
 }
 
 .buy-links-list {
-  padding: 0;
   margin-top: 10%;
   height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  list-style-type: none;
 
   a {
     text-decoration: none;
@@ -83,7 +80,7 @@
   }
 }
 
-.bestseller-card {
+.bestseller-info {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -94,22 +91,26 @@
   }
 }
 
-.bestseller-card-compose {
+.bestseller-info-compose {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
   padding: 1%;
-  width: 80%;
-  height: 75%;
-  border-bottom: 1px solid $accent-color;
+
+  &.bestseller-info-compose-size {
+    width: 80%;
+    height: 75%;
+  }
+
+  &.bestseller-info-border {
+    border-bottom: 1px solid $accent-color;
+  }
 }
 
 .bestseller-card-header {
-  display: flex;
+  @include flexCenter();
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
   h1 {
     font-size: 4rem;

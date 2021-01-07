@@ -1,0 +1,42 @@
+@import '../../../../styles';
+
+.search-radio {
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-gap: 0.5em;
+  font-size: 1.2rem;
+  color: $supplement-color;
+}
+
+.search-radio-input {
+  display: flex;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + .search-radio-control {
+      background: radial-gradient($accent-color 30%, $main-color 40%) center;
+    }
+  }
+}
+
+.search-radio-control {
+  display: block;
+  transform: translateY(-0.05em);
+
+  &.search-radio-control-size {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  &.search-radio-control-border {
+    border-radius: 50%;
+    border: 1px solid $supplement-color;
+  }
+}
+
+.search-radio-label {
+  line-height: 1;
+}

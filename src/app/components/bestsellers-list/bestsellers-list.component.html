@@ -1,18 +1,17 @@
 <section>
   <article>
-
     <header class="bestseller-header" *ngFor="let info of listInfo">
-      <h1>{{info.list_name.toString().toUpperCase()}}</h1>
-      <h2>THE NEW YORK TIMES BESTSELLERS LIS</h2>
+      <h1>{{info.list_name.toString() | uppercase}}</h1>
+      <h2>THE NEW YORK TIMES BESTSELLERS LIST</h2>
     </header>
 
     <ul class="bestseller-list">
       <li class="bestseller-list-element" *ngFor="let book of bestsellers">
-
         <!-- Bestseller cover -->
-        <div class="bestseller-cover" [ngStyle]="{'background-image': 'url(' + book.book_image + ')'}">
+        <div class="bestseller-cover bestseller-cover-coverage"
+             [ngStyle]="{'background-image': 'url(' + book.book_image + ')'}">
           <div class="filter-layer">
-              <div class="buy-links">
+              <div class="buy-links buy-links-visibility">
                 <header>
                   <h1>BUY IN</h1>
                 </header>
@@ -26,8 +25,8 @@
         </div>
 
         <!-- Bestseller description -->
-        <div class="bestseller-card">
-          <div class="bestseller-card-compose">
+        <div class="bestseller-info">
+          <div class="bestseller-info-compose bestseller-info-compose-size bestseller-info-border">
             <header class="bestseller-card-header">
               <h1>{{book.rank}}</h1>
               <h2>{{book.title}}</h2>
@@ -38,20 +37,19 @@
               'font-weight': (book.rank | rank: book.rank_last_week) === 'NEW' ? 400 : 900}">
                 {{book.rank | rank: book.rank_last_week}}
               </span>
-
               <p>Written by {{book.author}}</p>
             </header>
+
             <main class="bestseller-summary">
               <p>{{book.description}}</p>
             </main>
+
             <footer class="bestseller-publisher">
               <p>{{book.publisher}} Publishing</p>
             </footer>
           </div>
         </div>
-
       </li>
     </ul>
-
   </article>
 </section>

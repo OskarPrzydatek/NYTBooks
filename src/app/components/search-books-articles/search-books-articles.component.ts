@@ -6,7 +6,10 @@ import { ViewportScroller } from '@angular/common';
 @Component({
   selector: 'app-search-books-articles',
   templateUrl: './search-books-articles.component.html',
-  styleUrls: ['./search-books-articles.component.scss']
+  styleUrls: [
+    './search-book-articles-style/search-books-articles.component.scss',
+    './search-book-articles-style/search-book-articles-radio-input.scss'
+  ]
 })
 export class SearchBooksArticlesComponent implements OnInit {
   foundArticles = [];

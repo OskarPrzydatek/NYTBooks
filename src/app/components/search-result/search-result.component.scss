@@ -15,16 +15,9 @@
   }
 }
 
-.result {
-  padding: 0;
-  list-style-type: none;
-}
-
 .result-article {
-  display: flex;
+  @include flexCenter;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 35vh;
   border-top: 1px solid $accent-color;
 
@@ -35,17 +28,15 @@
 
 .article-info {
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  flex-direction: column;
   height: 100%;
 }
 
 .book-info {
-  display: flex;
+  @include flexCenter;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
   h1 {
     font-size: 2.4rem;
