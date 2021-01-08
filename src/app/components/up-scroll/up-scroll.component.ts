@@ -10,7 +10,6 @@ export class UpScrollComponent implements OnInit, AfterViewInit {
   @Input() target: string;
   @Input() scrollPosition: number;
   start = false;
-  console = console;
 
   constructor(private viewportScroller: ViewportScroller) { }
 
