@@ -15,6 +15,7 @@ import { BestsellersComponent } from './components/bestsellers/bestsellers.compo
 import { RankPipe } from './pipes/rank/rank.pipe';
 import { MultiplicityPipe } from './pipes/multiplicity/multiplicity.pipe';
 import { SearchPlaceholderPipe } from './pipes/search-placeholder/search-placeholder.pipe';
+import { UpScrollComponent } from './components/up-scroll/up-scroll.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SearchPlaceholderPipe } from './pipes/search-placeholder/search-placeho
     RankPipe,
     MultiplicityPipe,
     SearchPlaceholderPipe,
+    UpScrollComponent,
   ],
   imports: [
     BrowserModule,

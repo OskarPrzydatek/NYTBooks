@@ -5,6 +5,8 @@
       <h2>THE NEW YORK TIMES BESTSELLERS LIST</h2>
     </header>
 
+    <app-up-scroll [target]="'nav'" [scrollPosition]="300"></app-up-scroll>
+
     <ul class="bestseller-list">
       <li class="bestseller-list-element" *ngFor="let book of bestsellers">
         <!-- Bestseller cover -->

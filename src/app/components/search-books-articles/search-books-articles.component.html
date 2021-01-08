@@ -60,8 +60,8 @@
 
     <div id="result-indicator"></div>
 
-  <div *ngIf="start">
-    <div *ngIf="articlesData[0] !== 'OK'; then loading else searchResult "></div>
+    <div *ngIf="start">
+      <div *ngIf="articlesData[0] !== 'OK'; then loading else searchResult "></div>
   </div>
 
   <ng-template #loading>

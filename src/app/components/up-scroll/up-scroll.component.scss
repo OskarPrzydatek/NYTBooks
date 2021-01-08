@@ -1,0 +1,25 @@
+@import "src/styles.scss";
+
+.up-scroll {
+  position: sticky;
+  top: 25%;
+  left: 94%;
+  cursor: pointer;
+
+  &.up-scroll-size {
+    width: 5vw;
+    height: 5vh;
+  }
+
+  &.up-scroll-icon {
+    background-color: $supplement-color;
+    mask-image: url("../../img/up-arrow.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    transition: background-color .3s;
+
+    &:hover {
+      background-color: $accent-color;
+    }
+  }
+}

@@ -3,6 +3,8 @@
     <h1>{{articlesData[1]}} {{(articlesData[1] | multiplicity: 'article') | uppercase}} FOUND</h1>
   </header>
 
+  <app-up-scroll [target]="'nav'" [scrollPosition]="800"></app-up-scroll>
+
   <ul>
     <li class="result-article" *ngFor="let article of foundArticles">
       <article class="article-info">
