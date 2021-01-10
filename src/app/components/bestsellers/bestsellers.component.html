@@ -1,7 +1,7 @@
-<div *ngIf="bestsellers.length > 0; then list else loading"></div>
+<div *ngIf="bestsellers.list.length > 0; then list else loading"></div>
 
 <ng-template #list>
-  <app-bestsellers-list [bestsellers]="bestsellers" [listInfo]="listInfo"></app-bestsellers-list>
+  <app-bestsellers-list [bestsellersList]="bestsellers.list" [listInfo]="bestsellers.info"></app-bestsellers-list>
 </ng-template>
 <ng-template #loading>
   <app-loading></app-loading>

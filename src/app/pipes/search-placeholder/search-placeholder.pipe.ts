@@ -8,10 +8,8 @@ export class SearchPlaceholderPipe implements PipeTransform {
   transform(searchTarget: string): string {
     if (searchTarget === 'author') {
       return 'Put authors Name and Lastname';
-    } else if (searchTarget === 'isbn') {
-      return 'Put books ISBN number';
-    } else {
-      return 'Put books title';
     }
+
+    return (searchTarget === 'isbn') ? 'Put books ISBN number' : 'Put books title';
   }
 }

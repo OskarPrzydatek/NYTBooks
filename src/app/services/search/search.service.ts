@@ -6,9 +6,13 @@ import { environment } from '../../../environments/environment.api';
 @Injectable({
   providedIn: 'root'
 })
-export class SearchBooksArticlesService {
+export class SearchService {
 
   constructor(private http: HttpClient) { }
+
+  buildTarget(searchTarget: string, searchValue: string): string {
+    return `${searchTarget}=${searchValue}`;
+  }
 
   search(target: string): Observable<any> {
     return this.http.get(environment.searchURL(target));

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BestsellersListService } from '../../services/bestsellers-list/bestsellers-list.service';
+import { BestsellersService } from '../../services/bestsellers/bestsellers.service';
 
 @Component({
   selector: 'app-bestsellers',
@@ -7,20 +7,24 @@ import { BestsellersListService } from '../../services/bestsellers-list/bestsell
   styleUrls: []
 })
 export class BestsellersComponent implements OnInit {
-  listInfo = [];
-  bestsellers = [];
+  bestsellers = {
+    list: [],
+    info: []
+  };
 
-  constructor(private bestsellersList: BestsellersListService) { }
+  constructor(private bestsellersService: BestsellersService) { }
 
   ngOnInit(): void {
-    this.getList();
+    this.getBestsellersData();
   }
 
-  getList(): void {
-    this.bestsellersList.getList()
-      .subscribe(list => {
-        this.listInfo.push(list.results);
-        this.bestsellers = list.results.books;
+  getBestsellersData(): void {
+    this.bestsellersService.getBestsellersData()
+      .subscribe(data => {
+        this.bestsellers = {
+          list: data.results.books,
+          info: data.results
+        };
       });
   }
 }

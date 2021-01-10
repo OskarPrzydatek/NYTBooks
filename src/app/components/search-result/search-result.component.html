@@ -1,12 +1,12 @@
 <article class="result-compose">
   <header class="articles-found-info">
-    <h1>{{articlesData[1]}} {{(articlesData[1] | multiplicity: 'article') | uppercase}} FOUND</h1>
+    <h1>{{numOfArticles}} {{(numOfArticles | multiplicity: 'article') | uppercase}} FOUND</h1>
   </header>
 
-  <app-up-scroll [target]="'nav'" [scrollPosition]="800"></app-up-scroll>
+  <app-up-scroll [smoothMoveTarget]="'nav'" [scrollPosition]="800"></app-up-scroll>
 
   <ul>
-    <li class="result-article" *ngFor="let article of foundArticles">
+    <li class="result-article" *ngFor="let article of articles">
       <article class="article-info">
 
         <header class="book-info">

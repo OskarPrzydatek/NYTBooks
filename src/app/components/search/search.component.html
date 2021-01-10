@@ -10,7 +10,7 @@
         <input class="search-input search-input-border"
                formControlName="searchValue"
                type="text"
-               maxlength="35"
+               maxlength="55"
                placeholder="{{(searchForm.value.searchTarget | searchPlaceholder) | uppercase}}"/>
       </label>
 
@@ -53,22 +53,24 @@
       <button class="search-button search-button-size search-button-color search-button-border"
               type="submit"
               [disabled]="searchForm.invalid"
-              (click)="toResultScroll('result-indicator')">
+              (click)="smoothMove('result-indicator')">
         SEARCH
       </button>
     </form>
 
     <div id="result-indicator"></div>
 
-    <div *ngIf="start">
-      <div *ngIf="articlesData[0] !== 'OK'; then loading else searchResult "></div>
+    <div *ngIf="isFirstSearch">
+      <div *ngIf="searchResultData.status !== 'OK'; then loading else searchResult "></div>
     </div>
 
   <ng-template #loading>
     <app-loading></app-loading>
   </ng-template>
   <ng-template #searchResult>
-    <app-search-result [foundArticles]="foundArticles" [articlesData]="articlesData"></app-search-result>
+    <app-search-result
+      [numOfArticles]="searchResultData.numberOfArticles"
+      [articles]="searchResultData.articles"></app-search-result>
   </ng-template>
   </article>
 </section>

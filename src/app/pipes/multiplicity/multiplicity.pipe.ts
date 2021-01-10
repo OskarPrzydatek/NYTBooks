@@ -9,10 +9,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class MultiplicityPipe implements PipeTransform {
 
   transform(numOfElements: number, word: string): any {
-    if (numOfElements === 1) {
-      return word;
-    }
-
-    return `${word}s`;
+    return (numOfElements === 1) ? word : `${word}s`;
   }
 }

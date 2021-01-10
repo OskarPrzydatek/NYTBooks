@@ -1,11 +1,11 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BestsellersComponent } from './components/bestsellers/bestsellers.component';
-import { SearchBooksArticlesComponent } from './components/search-books-articles/search-books-articles.component';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   {path: '', component: BestsellersComponent},
-  {path: 'search', component: SearchBooksArticlesComponent},
+  {path: 'search', component: SearchComponent},
   {path: '**', redirectTo: ''}
 ];
 

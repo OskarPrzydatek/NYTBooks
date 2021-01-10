@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {RankColors} from './rank-colors';
+import { RankColors } from './rank-colors';
+import { BestsellersService } from '../../services/bestsellers/bestsellers.service';
 
 @Component({
   selector: 'app-bestsellers-list',
@@ -7,20 +8,14 @@ import {RankColors} from './rank-colors';
   styleUrls: ['./bestsellers-list.component.scss']
 })
 export class BestsellersListComponent implements OnInit {
-  @Input() bestsellers;
+  @Input() bestsellersList;
   @Input() listInfo;
-  rankColors: RankColors = {
-    up: '#527964',
-    stay: '#262626',
-    down: '#D56A60'
-  };
 
-  constructor() { }
+  constructor(private bestsellersService: BestsellersService) { }
 
   ngOnInit(): void { }
 
   rankStyle(condition: number): string {
-    return (condition > 0) ? `${this.rankColors.up}`
-      : (condition < 0) ? `${this.rankColors.down}` : `${this.rankColors.stay}`;
+    return this.bestsellersService.rankStyle(condition, RankColors);
   }
 }
