@@ -4,9 +4,9 @@ import { BestsellersComponent } from './components/bestsellers/bestsellers.compo
 import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
-  {path: '', component: BestsellersComponent},
-  {path: 'search', component: SearchComponent},
-  {path: '**', redirectTo: ''}
+  { path: '', component: BestsellersComponent },
+  { path: 'search', component: SearchComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

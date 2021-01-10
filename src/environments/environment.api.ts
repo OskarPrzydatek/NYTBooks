@@ -7,4 +7,3 @@ export const environment = {
     return `https://api.nytimes.com/svc/books/v3/reviews.json?${target}&api-key=${this.APIkey}`;
   }
 };
-

@@ -1,6 +1,5 @@
-import {Component, HostListener, Input, OnInit, AfterViewInit, ChangeDetectorRef} from '@angular/core';
-import { ViewportScroller } from '@angular/common';
-import {ScrollerService} from '../../services/scroller/scroller.service';
+import { Component, HostListener, Input, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { ScrollerService } from '../../services/scroller/scroller.service';
 
 @Component({
   selector: 'app-up-scroll',
