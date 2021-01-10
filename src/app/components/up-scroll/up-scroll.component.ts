@@ -10,7 +10,7 @@ import {ScrollerService} from '../../services/scroller/scroller.service';
 export class UpScrollComponent implements OnInit, AfterViewInit {
   @Input() smoothMoveTarget: string;
   @Input() scrollPosition: number;
-  start = false;
+  visibility = false;
 
   constructor(private scrollerService: ScrollerService,
               private changeDetectionRef: ChangeDetectorRef) { }
@@ -18,7 +18,7 @@ export class UpScrollComponent implements OnInit, AfterViewInit {
   ngOnInit(): void { }
 
   ngAfterViewInit(): void {
-    this.start = true;
+    this.visibility = true;
     this.changeDetectionRef.detectChanges();
   }
 
