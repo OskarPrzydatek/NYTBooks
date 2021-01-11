@@ -9,7 +9,7 @@ import { BestsellersService } from '../../services/bestsellers/bestsellers.servi
 })
 export class BestsellersListComponent implements OnInit {
   @Input() bestsellersList;
-  @Input() listInfo;
+  @Input() listName;
 
   constructor(private bestsellersService: BestsellersService) { }
 

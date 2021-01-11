@@ -8,8 +8,8 @@ import { BestsellersService } from '../../services/bestsellers/bestsellers.servi
 })
 export class BestsellersComponent implements OnInit {
   bestsellers = {
-    list: [],
-    info: []
+    listName: '',
+    list: []
   };
 
   constructor(private bestsellersService: BestsellersService) { }
@@ -22,8 +22,8 @@ export class BestsellersComponent implements OnInit {
     this.bestsellersService.getBestsellersData()
       .subscribe(data => {
         this.bestsellers = {
-          list: data.results.books,
-          info: data.results
+          listName: data.results.list_name,
+          list: data.results.books
         };
       });
   }
