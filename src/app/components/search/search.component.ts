@@ -15,6 +15,7 @@ export class SearchComponent implements OnInit {
   searchResultData = {
     status: null,
     numberOfArticles: null,
+    copyright: null,
     articles: []
   };
   targetURL: string;
@@ -53,6 +54,7 @@ export class SearchComponent implements OnInit {
         this.searchResultData = {
           status: data.status,
           numberOfArticles: data.num_results,
+          copyright: data.copyright,
           articles: data.results
         };
       });
@@ -62,6 +64,7 @@ export class SearchComponent implements OnInit {
     this.searchResultData = {
       status: null,
       numberOfArticles: null,
+      copyright: null,
       articles: []
     };
   }

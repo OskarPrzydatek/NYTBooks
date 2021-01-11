@@ -13,21 +13,33 @@
 .bestseller-list {
   margin: 1% 2.5% 15% 2.5%;
   color: $supplement-color;
+
+  /*@media screen and (max-width: 900px){
+    margin-top: 0;
+  }*/
 }
 
 .bestseller-list-element {
   display: flex;
   flex-direction: row;
   margin-top: 1%;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .bestseller-cover {
-  width: 30vw;
-  height: 93vh;
+  background-size: cover;
+  background-position: center;
 
-  &.bestseller-cover-coverage {
-    background-size: cover;
-    background-position: center;
+  &.bestseller-cover-size {
+    width: 331px;
+    height: 500px;
+    min-width: 331px;
+    min-height: 500px;
   }
 }
 
@@ -84,10 +96,22 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 70vw;
+
+  &.bestseller-info-size {
+    width: 70vw;
+
+    @media screen and (max-width: 900px) {
+      width: 85vw;
+      height: 90vh;
+    }
+  }
 
   p {
     width: 50vw;
+
+    @media screen and (max-width: 628px) {
+      width: 80vw;
+    }
   }
 }
 
@@ -131,8 +155,29 @@
 
 .bestseller-summary {
   font-size: 1.4rem;
+
 }
 
 .bestseller-publisher {
   font-size: .8rem;
+}
+
+.bestseller-copyright {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 5vh;
+
+  @media screen and (max-width: 620px) {
+    height: 20vh;
+  }
+
+  @media screen and (max-width: 900px) {
+    height: 10vh;
+  }
+
+  p {
+    padding: .5%;
+    font-size: .6rem;
+  }
 }

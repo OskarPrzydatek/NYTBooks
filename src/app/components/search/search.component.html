@@ -5,7 +5,10 @@
       <p>All NYT articles about books in one place!</p>
     </header>
 
-    <form class="search-form" [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
+    <form class="search-form"
+          [ngStyle]="{'margin-bottom': isFirstSearch ? null : 10+'%'}"
+          [formGroup]="searchForm"
+          (ngSubmit)="onSubmit(searchForm.value)">
       <label class="search-input-label">
         <input class="search-input search-input-border"
                formControlName="searchValue"
@@ -70,7 +73,8 @@
   <ng-template #searchResult>
     <app-search-result
       [numOfArticles]="searchResultData.numberOfArticles"
-      [articles]="searchResultData.articles"></app-search-result>
+      [articles]="searchResultData.articles"
+      [copyright]="searchResultData.copyright"></app-search-result>
   </ng-template>
   </article>
 </section>

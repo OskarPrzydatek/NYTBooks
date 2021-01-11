@@ -10,13 +10,15 @@
     <ul class="bestseller-list">
       <li class="bestseller-list-element" *ngFor="let book of bestsellersList">
         <!-- Bestseller cover -->
-        <div class="bestseller-cover bestseller-cover-coverage"
+        <div class="bestseller-cover bestseller-cover-size"
              [ngStyle]="{'background-image': 'url(' + book.book_image + ')'}">
+
           <div class="filter-layer">
               <div class="buy-links buy-links-visibility">
                 <header>
                   <h1>BUY IN</h1>
                 </header>
+
                 <ul class="buy-links-list">
                   <li *ngFor="let store of book.buy_links">
                     <a href='{{store.url}}' target="_blank">{{store.name | uppercase}}</a>
@@ -27,7 +29,7 @@
         </div>
 
         <!-- Bestseller description -->
-        <div class="bestseller-info">
+        <div class="bestseller-info bestseller-info-size">
           <div class="bestseller-info-compose bestseller-info-compose-size bestseller-info-border">
             <header class="bestseller-card-header">
               <h1>{{book.rank}}</h1>
@@ -53,5 +55,9 @@
         </div>
       </li>
     </ul>
+
+    <footer class="bestseller-copyright">
+      <p>{{copyright}}</p>
+    </footer>
   </article>
 </section>

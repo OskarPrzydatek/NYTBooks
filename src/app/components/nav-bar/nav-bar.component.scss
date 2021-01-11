@@ -3,8 +3,17 @@
 .nav-bar {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   height: 40vh;
   background: $supplement-color;
+
+  @media screen and (max-width: 872px) {
+    height: 30vh;
+  }
+
+  @media screen and (max-width: 593px) {
+    height: 25vh;
+  }
 }
 
 .header {
@@ -14,23 +23,42 @@
 
   a {
     text-decoration: none;
-    height: 100%;
   }
 
   h1 {
     color: $accent-color;
-    font-size: 4rem;
+    font-size: 4.5rem;
+    font-weight: 100;
+
+    @media screen and (max-width: 872px) {
+      font-size: 3rem;
+    }
+
+    @media screen and (max-width: 593px) {
+      font-size: 1.8rem;
+    }
   }
 }
 
 .logo {
-  background-image: url("../../img/nyt-logo-v.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
+  background: $main-color;
+  mask-image: url("../../img/nyt-logo-v.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
 
   &.logo-size {
-    min-width: 600px;
-    min-height: 215px;
+    width: 600px;
+    height: 100px;
+
+    @media screen and (max-width: 872px) {
+      width: 400px;
+      height: 100px;
+    }
+
+    @media screen and (max-width: 593px) {
+      width: 250px;
+      height: 100px;
+    }
   }
 }
 

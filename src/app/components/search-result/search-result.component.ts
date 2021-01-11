@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SearchResultComponent implements OnInit {
   @Input() numOfArticles: number;
+  @Input() copyright: string;
   @Input() articles = [];
 
   constructor() { }

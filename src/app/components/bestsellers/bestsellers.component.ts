@@ -8,7 +8,8 @@ import { BestsellersService } from '../../services/bestsellers/bestsellers.servi
 })
 export class BestsellersComponent implements OnInit {
   bestsellers = {
-    listName: '',
+    listName: null,
+    copyright: null,
     list: []
   };
 
@@ -23,6 +24,7 @@ export class BestsellersComponent implements OnInit {
       .subscribe(data => {
         this.bestsellers = {
           listName: data.results.list_name,
+          copyright: data.copyright,
           list: data.results.books
         };
       });
