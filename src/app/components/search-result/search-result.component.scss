@@ -19,6 +19,7 @@
   @include flexCenter;
   flex-direction: column;
   height: 35vh;
+  min-height: 280px;
   border-top: 1px solid $accent-color;
 
   &:last-child {
@@ -44,15 +45,27 @@
 
   h1 {
     font-size: 2.4rem;
+
+    @media screen and (max-width: 360px) {
+      font-size: 1.2rem;
+    }
   }
 
   p {
     font-size: .8rem;
+
+    @media screen and (max-width: 360px) {
+      font-size: .6rem;
+    }
   }
 }
 
 .article-summary {
   width: 75%;
+
+  @media screen and (max-width: 360px) {
+    font-size: .8rem;
+  }
 }
 
 .article-link-to {
@@ -60,6 +73,10 @@
   a {
     color: $supplement-color;
     transition: color .3s;
+
+    @media screen and (max-width: 360px) {
+      font-size: .7rem;
+    }
 
     &:hover {
       color: $accent-color;

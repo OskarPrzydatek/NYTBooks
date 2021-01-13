@@ -8,6 +8,28 @@
 
   h1 {
     font-size: 2rem;
+
+    @media screen and (max-width: 810px) {
+      font-size: 1.6rem;
+    }
+
+    @media screen and (max-width: 660px) {
+      font-size: 1.3rem;
+    }
+
+    @media screen and (max-width: 539px) {
+      font-size: 1.1rem;
+    }
+  }
+
+  p {
+    @media screen and (max-width: 539px) {
+      font-size: .9rem;
+    }
+
+    @media screen and (max-width: 280px) {
+      font-size: .8rem;
+    }
   }
 }
 
@@ -23,6 +45,7 @@
 .search-input-label {
   width: 30%;
   height: 15%;
+  min-height: 40px;
 
   @media screen and (max-width: 915px) {
     width: 40%;
@@ -80,11 +103,43 @@
 .search-button {
   margin-top: 2%;
   padding: 0;
-  font-size: 1.6rem;
+
+  &.search-button-font-size {
+    font-size: 1.6rem;
+
+    @media screen and (max-width: 870px) {
+      font-size: 1.4rem;
+    }
+
+    @media screen and (max-width: 640px) {
+      font-size: 1.2rem;
+    }
+
+    @media screen and (max-width: 530px) {
+      font-size: 1rem;
+    }
+
+    @media screen and (max-width: 360px) {
+      font-size: .8rem;
+    }
+
+    @media screen and (max-width: 280px) {
+      font-size: .6rem;
+    }
+  }
 
   &.search-button-size {
     width: 20%;
     height: 15%;
+    min-height: 30px;
+
+    @media screen and (max-width: 360px) {
+      height: 10%;
+    }
+
+    @media screen and (max-width: 280px) {
+      height: 8%;
+    }
   }
 
   &.search-button-color {

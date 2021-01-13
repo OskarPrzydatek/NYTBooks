@@ -7,8 +7,16 @@
   font-size: 1.2rem;
   color: $supplement-color;
 
-  @media screen and (max-width: 520px){
+  @media screen and (max-width: 410px) {
     font-size: 1rem;
+  }
+
+  @media screen and (max-width: 376px) {
+    font-size: .9rem;
+  }
+
+  @media screen and (max-width: 420px), screen and (max-height: 420px) {
+    font-size: .8rem;
   }
 }
 
@@ -34,9 +42,9 @@
     width: 1.2rem;
     height: 1.2rem;
 
-    @media screen and (max-width: 520px){
-      width: 1rem;
-      height: 1rem;
+    @media screen and (max-width: 520px), screen and (max-height: 420px) {
+      width: .9rem;
+      height: .9rem;
     }
   }
 
