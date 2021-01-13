@@ -13,10 +13,6 @@
 .bestseller-list {
   margin: 1% 2.5% 15% 2.5%;
   color: $supplement-color;
-
-  /*@media screen and (max-width: 900px){
-    margin-top: 0;
-  }*/
 }
 
 .bestseller-list-element {
@@ -24,7 +20,7 @@
   flex-direction: row;
   margin-top: 1%;
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 760px) {
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
@@ -40,6 +36,13 @@
     height: 500px;
     min-width: 331px;
     min-height: 500px;
+
+    @media screen and (max-width: 390px) {
+      width: 245px;
+      height: 400px;
+      min-width: 245px;
+      min-height: 400px;
+    }
   }
 }
 
@@ -100,9 +103,13 @@
   &.bestseller-info-size {
     width: 70vw;
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 760px) {
       width: 85vw;
-      height: 90vh;
+      height: 78vh;
+    }
+
+    @media screen and (max-height: 500px) {
+      min-height: 425px;
     }
   }
 
@@ -156,6 +163,17 @@
 .bestseller-summary {
   font-size: 1.4rem;
 
+  @media screen and (max-width: 900px) {
+    font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: 628px) {
+    font-size: 1rem;
+  }
+
+  @media screen and (max-width: 390px) {
+    font-size: .8rem;
+  }
 }
 
 .bestseller-publisher {

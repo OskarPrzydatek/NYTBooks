@@ -21,6 +21,10 @@
   flex-direction: row;
   height: 80%;
 
+  @media screen and (max-width: 354px) {
+    flex-direction: column;
+  }
+
   a {
     text-decoration: none;
   }
@@ -58,6 +62,10 @@
     @media screen and (max-width: 593px) {
       width: 250px;
       height: 100px;
+    }
+
+    @media screen and (max-width: 354px) {
+      height: 40px;
     }
   }
 }
