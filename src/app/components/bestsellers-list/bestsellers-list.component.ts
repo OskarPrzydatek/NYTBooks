@@ -19,4 +19,8 @@ export class BestsellersListComponent implements OnInit {
   rankStyle(condition: number): string {
     return this.bestsellersService.rankStyle(condition, RankColors);
   }
+
+  rankBolt(condition: string): number {
+    return (condition === 'NEW' || condition === 'BACK!') ? 400 : 900;
+  }
 }
