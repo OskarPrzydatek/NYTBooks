@@ -23,4 +23,8 @@ export class BestsellersListComponent implements OnInit {
     return (condition > 0) ? `${this.rankColors.up}`
       : (condition < 0) ? `${this.rankColors.down}` : `${this.rankColors.stay}`;
   }
+
+  rankBolt(condition: string): number {
+    return (condition === 'NEW' || condition === 'BACK!') ? 400 : 900;
+  }
 }

@@ -34,9 +34,9 @@
 
               <!-- rank -->
               <span class="bestseller-rank" [ngStyle]="{
-              'color': rankStyle((book.rank | rank: book.rank_last_week)),
-              'font-weight': (book.rank | rank: book.rank_last_week) === 'NEW' ? 400 : 900}">
-                {{book.rank | rank: book.rank_last_week}}
+              'color': rankStyle((book.rank | rank: book.rank_last_week : book.weeks_on_list)),
+              'font-weight': rankBolt((book.rank | rank: book.rank_last_week : book.weeks_on_list))}">
+                {{book.rank | rank: book.rank_last_week : book.weeks_on_list}}
               </span>
 
               <p>Written by {{book.author}}</p>
